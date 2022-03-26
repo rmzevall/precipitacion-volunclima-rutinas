@@ -43,7 +43,6 @@ def ejecucionObservadores(host, usuario, contraseña, siglas):
     año = datetime.now().year
     añoA = datetime.now().year
     mesA = mes - 1
-    Smes = ""
     if (mes == 1):
         añoA = año - 1
         mesA = 12
@@ -85,14 +84,11 @@ def ejecucionObservadores(host, usuario, contraseña, siglas):
     f = open("Observadores-" + siglas + "-" + fecha + ".txt", "w")
     f.write(texto(reporte))
     f.close()
-    #file = open("Observadores-" + siglas + "-" + fecha + ".txt", "rb")
-    #ftp.storbinary('STOR ' + "Observadores-" + siglas + "-" + fecha + ".txt", file)
-    #file.close()
+    file = open("Observadores-" + siglas + "-" + fecha + ".txt", "rb")
+    ftp.storbinary('STOR ' + "Observadores-" + siglas + "-" + fecha + ".txt", file)
+    file.close()
     conexion1.close()
 
-#Se ingresa los datos del ftp
 
-#ejecucionObservadores(host, usuario, contraseña, siglas)
-#ejecucionObservadores(host, usuario, contraseña, siglas)
-#ejecucionObservadores(host, usuario, contraseña, siglas)
-#ejecucionObservadores(host, usuario, contraseña, siglas)
+
+
